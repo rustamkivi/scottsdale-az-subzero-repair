@@ -105,7 +105,8 @@
     .hero-desc { font-size: .95rem; color: rgba(255,255,255,0.7); max-width: 480px; margin-bottom: 32px; line-height: 1.8; font-weight: 300; }
 
     .hero-prob-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
-    .h-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: .78rem; padding: 6px 14px; border-radius: 100px; }
+    .h-tag { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.85); font-size: .78rem; padding: 6px 14px; border-radius: 100px; text-decoration: none; display: inline-flex; align-items: center; transition: background .2s; }
+    .h-tag:hover { background: rgba(255,255,255,0.2); color: white; }
 
     .service-note { font-size: .72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 14px; }
     .service-note strong { color: #ffd700; }
@@ -300,12 +301,12 @@
 
 ```
   <div class="hero-prob-tags">
-    <div class="h-tag">❄️ Not Cooling</div>
-    <div class="h-tag">🧊 Ice Maker</div>
-    <div class="h-tag">💧 Leaking Water</div>
-    <div class="h-tag">🌡️ Temperature Off</div>
-    <div class="h-tag">❄️ Freezer Issues</div>
-    <div class="h-tag">🍷 Wine Cooler</div>
+    <a href="/not-cooling.html" class="h-tag">❄️ Not Cooling</a>
+    <a href="/ice-maker-repair.html" class="h-tag">🧊 Ice Maker</a>
+    <a href="/leaking-water.html" class="h-tag">💧 Leaking Water</a>
+    <a href="/freezer-repair.html" class="h-tag">🌡️ Freezer Issues</a>
+    <a href="/wine-cooler.html" class="h-tag">🍷 Wine Cooler</a>
+    <a href="/error-codes.html" class="h-tag">🔴 Error Codes</a>
   </div>
 
   <div class="service-note">Service Call — <strong>$89</strong> · No fix, no pay</div>
@@ -365,64 +366,64 @@
     <h2>Sub-Zero Repair Services <em>in Scottsdale</em></h2>
     <p class="s-lead">Every issue diagnosed and fixed on the first visit. We carry the most common Sub-Zero parts on the truck.</p>
     <div class="services-grid">
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/not-cooling.html" class="service-card">
         <div class="service-img">🌡️</div>
         <div class="service-body">
           <div class="service-tag">Most Urgent</div>
           <h3>Sub-Zero Not Cooling</h3>
           <p>Fridge too warm, food spoiling, temperature rising. Same-day emergency priority — food can't wait.</p>
           <div class="service-urgency">⚠ Food at risk — call immediately</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/ice-maker-repair.html" class="service-card">
         <div class="service-img">🧊</div>
         <div class="service-body">
           <div class="service-tag">Most Common</div>
           <h3>Ice Maker Not Working</h3>
           <p>No ice, slow production, clumped cubes, dispenser jammed. Fixed same day in most cases.</p>
           <div class="service-urgency">Most common Sub-Zero issue in AZ</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/leaking-water.html" class="service-card">
         <div class="service-img">💧</div>
         <div class="service-body">
           <div class="service-tag">Floor Damage Risk</div>
           <h3>Leaking Water</h3>
           <p>Pooling inside or under the unit. Water damage gets expensive fast — we trace and fix same day.</p>
           <div class="service-urgency">⚠ Floor damage risk — act fast</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/freezer-repair.html" class="service-card">
         <div class="service-img">❄️</div>
         <div class="service-body">
           <div class="service-tag">Freezer Issues</div>
           <h3>Freezer Not Freezing</h3>
           <p>Ice melting, freezer warming, frost buildup blocking airflow. Restored same visit.</p>
           <div class="service-urgency">⚠ Frozen food at risk</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/error-codes.html" class="service-card">
         <div class="service-img">🔴</div>
         <div class="service-body">
           <div class="service-tag">Diagnostics</div>
           <h3>Error Codes & Alarms</h3>
           <p>We read all Sub-Zero diagnostic codes and fix the underlying issue — not just clear the display.</p>
           <div class="service-urgency">Full diagnosis included</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
-      <a href="tel:+14804189669" class="service-card">
+      <a href="/wine-cooler.html" class="service-card">
         <div class="service-img">🍷</div>
         <div class="service-body">
           <div class="service-tag">Wine Storage</div>
           <h3>Wine Cooler Service</h3>
           <p>Temperature issues, vibration, or not running. All Sub-Zero wine storage models serviced.</p>
           <div class="service-urgency">All models — all series</div>
-          <div class="service-link">Call Now →</div>
+          <div class="service-link">Learn More →</div>
         </div>
       </a>
     </div>
@@ -592,11 +593,16 @@
       <p><a href="tel:+14804189669">(480) 418-9669</a></p>
       <p>Mon–Fri 9AM–6PM · Sat 9AM–1PM</p>
     </div>
-    <div class="footer-links">
-      <a href="#services">Services</a>
-      <a href="#areas">Areas</a>
-      <a href="#reviews">Reviews</a>
-      <a href="#faq">FAQ</a>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="#services" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Services</a>
+        <a href="#areas" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Areas</a>
+        <a href="#reviews" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Reviews</a>
+        <a href="#faq" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">FAQ</a>
+      </div>
+      <a href="https://www.yelp.com/biz/oasis-appliance-repair-scottsdale" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#d32323;color:white;font-size:.8rem;font-weight:700;padding:9px 18px;border-radius:6px;text-decoration:none;">
+        ⭐ Read Our Reviews on Yelp
+      </a>
     </div>
   </div>
 </footer>
