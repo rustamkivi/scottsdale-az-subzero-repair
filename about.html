@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Scottsdale Sub-Zero Repair Specialists</title>
+  <meta name="description" content="9+ years repairing Sub-Zero appliances in Scottsdale AZ. Meet the team behind Scottsdale's most trusted Sub-Zero repair service. Call (480) 418-9669.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --white: #ffffff; --light: #f8f9fc; --light2: #f0f2f8;
+      --dark: #1a1f2e; --blue: #1e3a5f;
+      --red: #c0392b; --red2: #e74c3c;
+      --text: #1a1f2e; --muted: #5a6478; --border: #e2e8f0;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.65; overflow-x: hidden; padding-bottom: 80px; }
+
+    /* NAV */
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 5%; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--dark); letter-spacing: 1px; text-decoration: none; }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .nav-cta { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 6px; font-weight: 600 !important; font-size: .85rem !important; }
+    .nav-cta:hover { background: var(--red2) !important; }
+    @media(max-width:768px){ .nav-links { display: none; } }
+
+    /* HERO */
+    .page-hero { background: linear-gradient(135deg, var(--blue) 0%, #0f2744 100%); padding: 130px 5% 80px; position: relative; overflow: hidden; }
+    .page-hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px; background: var(--white); clip-path: ellipse(55% 100% at 50% 100%); }
+    .page-hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 460px; gap: 60px; align-items: center; }
+    @media(max-width:900px){ .page-hero-inner { grid-template-columns: 1fr; } }
+    .hero-eye { font-size: .7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; font-weight: 600; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 700; line-height: 1.15; color: white; margin-bottom: 20px; }
+    .page-hero h1 em { font-style: italic; color: #ff8a80; }
+    .page-hero p { font-size: .95rem; color: rgba(255,255,255,0.7); line-height: 1.85; font-weight: 300; max-width: 520px; }
+    .hero-photo { width: 100%; height: 380px; object-fit: cover; border-radius: 16px; box-shadow: 0 20px 60px rgba(0,0,0,0.35); display: block; }
+    @media(max-width:900px){ .hero-photo { display: none; } }
+
+    /* SECTIONS */
+    section { padding: 80px 5%; }
+    @media(max-width:768px){ section { padding: 60px 5%; } }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .s-eye { font-size: .7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--red); margin-bottom: 12px; font-weight: 600; }
+    h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 700; color: var(--dark); margin-bottom: 14px; line-height: 1.2; }
+    h2 em { font-style: italic; color: var(--red); }
+    .s-lead { color: var(--muted); max-width: 600px; margin-bottom: 48px; font-size: .95rem; line-height: 1.85; }
+
+    /* STORY */
+    .story-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width:900px){ .story-layout { grid-template-columns: 1fr; } }
+    .story-photo { width: 100%; height: 420px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .story-text p { font-size: .95rem; color: var(--muted); line-height: 1.9; margin-bottom: 20px; }
+    .story-text p strong { color: var(--dark); }
+
+    /* STATS */
+    .stats-section { background: linear-gradient(135deg, var(--blue) 0%, #0f2744 100%); }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 32px; }
+    .stat-card { text-align: center; }
+    .stat-num { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 700; color: #ffd700; line-height: 1; margin-bottom: 8px; }
+    .stat-label { font-size: .78rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+
+    /* VALUES */
+    .values-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 20px; }
+    .value-card { background: white; border: 1px solid var(--border); border-radius: 12px; padding: 28px; transition: all .2s; }
+    .value-card:hover { border-color: var(--red); box-shadow: 0 4px 20px rgba(192,57,43,0.1); }
+    .value-icon { font-size: 2rem; margin-bottom: 16px; }
+    .value-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; }
+    .value-card p { font-size: .88rem; color: var(--muted); line-height: 1.7; }
+
+    /* SERVICE AREA */
+    .area-section { background: var(--light); }
+    .area-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width:900px){ .area-layout { grid-template-columns: 1fr; } }
+    .area-photo { width: 100%; height: 380px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .area-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+    .area-item { background: white; border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; font-size: .88rem; font-weight: 600; color: var(--dark); }
+
+    /* WHY */
+    .why-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width:900px){ .why-layout { grid-template-columns: 1fr; } }
+    .why-photo { width: 100%; height: 400px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.12); }
+    .why-points { display: grid; gap: 20px; }
+    .why-point { display: flex; gap: 16px; align-items: flex-start; }
+    .why-num { width: 40px; height: 40px; border-radius: 50%; background: var(--red); color: white; font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .why-point h3 { font-size: .95rem; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+    .why-point p { font-size: .84rem; color: var(--muted); line-height: 1.65; }
+
+    /* CTA */
+    .cta-section { background: linear-gradient(135deg, var(--blue) 0%, #0f2744 100%); text-align: center; }
+    .cta-section h2 { color: white; }
+    .cta-section p { color: rgba(255,255,255,0.65); margin: 12px 0 32px; font-weight: 300; }
+    .cta-num { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem,6vw,3.8rem); font-weight: 700; color: #ffd700; text-decoration: none; display: block; margin-bottom: 28px; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--red2); color: white; font-size: .9rem; font-weight: 700; letter-spacing: 1px; padding: 18px 36px; border-radius: 8px; text-decoration: none; box-shadow: 0 4px 24px rgba(231,76,60,0.4); transition: background .2s, transform .2s; }
+    .hero-btn:hover { background: var(--red); transform: translateY(-2px); }
+
+    /* FOOTER */
+    footer { background: var(--dark); padding: 44px 5%; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: white; }
+    .footer-logo span { color: #ff8a80; }
+    .f-info { color: rgba(255,255,255,0.4); font-size: .8rem; line-height: 1.9; }
+    .f-info a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-disclaimer { max-width: 1200px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.25); font-size: .72rem; line-height: 1.7; }
+
+    /* STICKY */
+    .sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; }
+    .sticky a { display: flex; align-items: center; justify-content: center; gap: 14px; background: var(--red2); color: white; font-size: .9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 20px; text-decoration: none; box-shadow: 0 -4px 20px rgba(231,76,60,0.3); width: 100%; }
+    .sticky a:hover { background: var(--red); }
+  </style>
+
+</head>
+<body>
+
+<!-- NAV -->
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">Scottsdale <span>Sub-Zero</span> Repair</a>
+    <div class="nav-links">
+      <a href="/index.html#services">Services</a>
+      <a href="/index.html#areas">Areas</a>
+      <a href="/index.html#reviews">Reviews</a>
+      <a href="/about.html" class="active">About</a>
+      <a href="/index.html#faq">FAQ</a>
+      <a href="tel:+14804189669" class="nav-cta">☎ (480) 418-9669</a>
+    </div>
+    <a href="tel:+14804189669" style="background:var(--red);color:white;padding:10px 18px;border-radius:6px;font-weight:700;font-size:.85rem;text-decoration:none;">☎ Call Now</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+
+<header class="page-hero">
+  <div class="page-hero-inner">
+    <div>
+      <div class="hero-eye">About Us · Scottsdale, AZ</div>
+      <h1>Scottsdale's Dedicated <em>Sub-Zero Specialists</em></h1>
+      <p>We built this business on one principle: Sub-Zero owners deserve a technician who actually specializes in their appliance — not a generalist who services everything from dishwashers to dryers. That's who we are.</p>
+    </div>
+    <img src="IMG_3918.png" alt="Scottsdale Sub-Zero repair technician" class="hero-photo">
+  </div>
+</header>
+
+<!-- STORY -->
+
+<section>
+  <div class="section-inner">
+    <div class="story-layout">
+      <img src="IMG_3924.png" alt="Sub-Zero technician explaining repair to Scottsdale homeowner" class="story-photo">
+      <div class="story-text">
+        <div class="s-eye">Our Story</div>
+        <h2>9+ Years of <em>Sub-Zero Experience</em></h2>
+        <p>We started with a simple observation: most appliance repair companies treat Sub-Zero like any other refrigerator. They show up with generic parts, generic knowledge, and generic results. Sub-Zero deserves better.</p>
+        <p>With <strong>9+ years focused exclusively on premium appliances</strong>, we've seen every failure mode Sub-Zero units develop — especially in Arizona's extreme climate. Scottsdale's 115°F summers and dust storms create problems you simply don't see in other markets.</p>
+        <p>We built our entire operation around this: <strong>same-day response, parts stocked on the truck, upfront pricing, and a 12-month warranty</strong> on every repair. No surprises, no runaround.</p>
+        <p>Our clients are Scottsdale homeowners who invested $8,000–$15,000 in a Sub-Zero. They deserve a technician who treats that investment with the respect it deserves.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+
+<section class="stats-section">
+  <div class="section-inner">
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-num">9+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">5.0</div>
+        <div class="stat-label">Star Rating</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$89</div>
+        <div class="stat-label">Service Call Fee</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">12mo</div>
+        <div class="stat-label">Repair Warranty</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">Same</div>
+        <div class="stat-label">Day Service</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES -->
+
+<section>
+  <div class="section-inner">
+    <div class="s-eye">How We Work</div>
+    <h2>What Sets Us <em>Apart</em></h2>
+    <p class="s-lead">We built every part of our operation around the needs of Scottsdale Sub-Zero owners.</p>
+    <div class="values-grid">
+      <div class="value-card">
+        <div class="value-icon">🎯</div>
+        <h3>Sub-Zero Only Focus</h3>
+        <p>We don't service everything. Our entire knowledge base, parts inventory, and diagnostic process is built around Sub-Zero. That depth shows in every repair.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">⚡</div>
+        <h3>Same-Day Response</h3>
+        <p>When your Sub-Zero fails in 115°F Arizona heat, you can't wait 3 days. Call before noon and we arrive the same day — every time.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">💰</div>
+        <h3>No Surprises Pricing</h3>
+        <p>You get a firm quote before we touch anything. The $89 service call applies toward your repair. No hidden fees, no upselling.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📋</div>
+        <h3>12-Month Written Warranty</h3>
+        <p>Every repair is backed by a 12-month warranty on parts and labor. If the same issue returns, we fix it at no charge. That's our commitment.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">🌵</div>
+        <h3>Arizona Climate Experts</h3>
+        <p>Scottsdale dust, extreme heat, and monsoon humidity affect Sub-Zero units differently than anywhere else. We know exactly what to look for.</p>
+      </div>
+      <div class="value-card">
+        <div class="value-icon">📦</div>
+        <h3>Parts on Every Truck</h3>
+        <p>We stock the most common Sub-Zero failure parts. Most repairs are completed on the first visit without waiting for parts to ship.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+
+<section style="background:var(--light);">
+  <div class="section-inner">
+    <div class="why-layout">
+      <div>
+        <div class="s-eye">Our Promise</div>
+        <h2>What You Can <em>Always Expect</em></h2>
+        <p class="s-lead" style="margin-bottom:32px;">Every call, every visit, every repair — these are non-negotiables.</p>
+        <div class="why-points">
+          <div class="why-point">
+            <div class="why-num">1</div>
+            <div>
+              <h3>Honest diagnosis — even if it's not what you want to hear</h3>
+              <p>We'll tell you if a repair isn't worth it. We'd rather lose a job than recommend a $600 fix on a unit that needs replacing.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">2</div>
+            <div>
+              <h3>Upfront price before any work begins</h3>
+              <p>You approve the exact cost. We don't start until you say go. Simple as that.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">3</div>
+            <div>
+              <h3>Clean, respectful service in your home</h3>
+              <p>We treat every Scottsdale home like it's our own. No mess left behind, no damage, no shortcuts.</p>
+            </div>
+          </div>
+          <div class="why-point">
+            <div class="why-num">4</div>
+            <div>
+              <h3>We stand behind every repair</h3>
+              <p>12-month warranty, written. If something goes wrong, we come back. No arguments, no excuses.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <img src="IMG_3909.png" alt="Sub-Zero repair in Scottsdale" class="why-photo">
+    </div>
+  </div>
+</section>
+
+<!-- SERVICE AREA -->
+
+<section class="area-section">
+  <div class="section-inner">
+    <div class="area-layout">
+      <div>
+        <div class="s-eye">Where We Serve</div>
+        <h2>All of Scottsdale <em>& Surrounding Areas</em></h2>
+        <p class="s-lead" style="margin-bottom:20px;">Based in Scottsdale — we serve every luxury community in the metro area with same-day availability.</p>
+        <div class="area-list">
+          <div class="area-item">📍 Scottsdale</div>
+          <div class="area-item">📍 Paradise Valley</div>
+          <div class="area-item">📍 North Scottsdale</div>
+          <div class="area-item">📍 Fountain Hills</div>
+          <div class="area-item">📍 McCormick Ranch</div>
+          <div class="area-item">📍 DC Ranch</div>
+          <div class="area-item">📍 Gainey Ranch</div>
+          <div class="area-item">📍 Silverleaf</div>
+          <div class="area-item">📍 Troon North</div>
+          <div class="area-item">📍 Arcadia</div>
+        </div>
+      </div>
+      <img src="IMG_3912.png" alt="Scottsdale Sub-Zero repair service van" class="area-photo">
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+
+<section class="cta-section">
+  <div class="section-inner">
+    <div class="s-eye" style="color:rgba(255,255,255,0.5);">Ready to Get It Fixed?</div>
+    <h2>Call <em>Right Now</em></h2>
+    <p>Same-day service · $89 service call · No fix, no pay · 12-month warranty</p>
+    <a href="tel:+14804189669" class="cta-num">(480) 418-9669</a>
+    <a href="tel:+14804189669" class="hero-btn" style="margin:0 auto;">🚨 Call Now — We Fix Today</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Scottsdale <span>Sub-Zero</span> Repair</div>
+      <div style="color:rgba(255,255,255,0.25);font-size:.72rem;margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Fast · Reliable · Professional</div>
+    </div>
+    <div class="f-info">
+      <p>Sub-Zero Repair · Scottsdale AZ & Surrounding Areas</p>
+      <p><a href="tel:+14804189669">(480) 418-9669</a></p>
+      <p>Mon–Fri 9AM–6PM · Sat 9AM–1PM</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <a href="/index.html#services" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Services</a>
+        <a href="/index.html#areas" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Areas</a>
+        <a href="/index.html#reviews" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Reviews</a>
+        <a href="/about.html" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">About</a>
+        <a href="/index.html#faq" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">FAQ</a>
+      </div>
+      <a href="https://www.yelp.com/biz/oasis-appliance-repair-scottsdale" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;background:#d32323;color:white;font-size:.8rem;font-weight:700;padding:9px 18px;border-radius:6px;text-decoration:none;">
+        ⭐ Read Our Reviews on Yelp
+      </a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    All brand names, logos, and trademarks referenced on this website are the property of their respective owners. Scottsdale Sub-Zero Repair is an independent appliance repair service provider and is not affiliated with, endorsed by, or sponsored by Sub-Zero Group, Inc. or any other appliance manufacturer. Sub-Zero® is a registered trademark of Sub-Zero Group, Inc.
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="tel:+14804189669">🚨 CALL NOW — (480) 418-9669 — SAME-DAY SERVICE</a>
+</div>
+
+</body>
+</html>
