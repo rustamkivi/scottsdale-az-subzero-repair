@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sub-Zero Repair Blog — Scottsdale AZ Tips & Guides</title>
+  <meta name="description" content="Expert Sub-Zero repair tips for Scottsdale homeowners. Arizona climate, common problems, maintenance guides. From the specialists at Scottsdale Sub-Zero Repair.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --white:#ffffff; --light:#f8f9fc; --light2:#f0f2f8; --dark:#1a1f2e; --blue:#1e3a5f; --red:#c0392b; --red2:#e74c3c; --text:#1a1f2e; --muted:#5a6478; --border:#e2e8f0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--text); line-height: 1.65; overflow-x: hidden; padding-bottom: 80px; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--white); border-bottom: 1px solid var(--border); box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+    .nav-inner { max-width: 1200px; margin: 0 auto; display: flex; align-items: center; justify-content: space-between; padding: 14px 5%; }
+    .nav-logo { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--dark); letter-spacing: 1px; text-decoration: none; }
+    .nav-logo span { color: var(--red); }
+    .nav-links { display: flex; gap: 24px; align-items: center; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: .85rem; font-weight: 500; transition: color .2s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--red); }
+    .nav-cta { background: var(--red); color: white !important; padding: 10px 20px; border-radius: 6px; font-weight: 600 !important; font-size: .85rem !important; }
+    @media(max-width:768px){ .nav-links { display: none; } }
+    .page-hero { background: linear-gradient(135deg, var(--blue) 0%, #0f2744 100%); padding: 130px 5% 80px; position: relative; overflow: hidden; text-align: center; }
+    .page-hero::after { content: ''; position: absolute; bottom: -1px; left: 0; right: 0; height: 60px; background: var(--white); clip-path: ellipse(55% 100% at 50% 100%); }
+    .page-hero .s-eye { font-size: .7rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.45); margin-bottom: 16px; font-weight: 600; }
+    .page-hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(2rem,4vw,3rem); font-weight: 700; color: white; margin-bottom: 16px; }
+    .page-hero h1 em { font-style: italic; color: #ff8a80; }
+    .page-hero p { color: rgba(255,255,255,0.65); font-size: .95rem; font-weight: 300; max-width: 560px; margin: 0 auto; }
+    section { padding: 80px 5%; }
+    .section-inner { max-width: 1200px; margin: 0 auto; }
+    .blog-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 28px; }
+    .blog-card { background: white; border: 1px solid var(--border); border-radius: 14px; overflow: hidden; text-decoration: none; color: var(--text); transition: transform .2s, box-shadow .2s; }
+    .blog-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .blog-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .blog-body { padding: 24px; }
+    .blog-tag { font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 10px; }
+    .blog-card h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; line-height: 1.3; }
+    .blog-card p { font-size: .85rem; color: var(--muted); line-height: 1.7; margin-bottom: 16px; }
+    .blog-meta { font-size: .75rem; color: var(--muted); display: flex; gap: 16px; }
+    .blog-link { font-size: .78rem; font-weight: 700; color: var(--red); letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-top: 12px; }
+    .cta-section { background: linear-gradient(135deg, var(--blue) 0%, #0f2744 100%); text-align: center; }
+    .cta-section h2 { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem,4vw,2.6rem); font-weight: 700; color: white; margin-bottom: 12px; }
+    .cta-section h2 em { font-style: italic; color: #ff8a80; }
+    .cta-section p { color: rgba(255,255,255,0.65); margin-bottom: 32px; font-weight: 300; }
+    .cta-num { font-family: 'Playfair Display', serif; font-size: clamp(2.4rem,6vw,3.8rem); font-weight: 700; color: #ffd700; text-decoration: none; display: block; margin-bottom: 28px; }
+    .hero-btn { display: inline-flex; align-items: center; gap: 12px; background: var(--red2); color: white; font-size: .9rem; font-weight: 700; padding: 18px 36px; border-radius: 8px; text-decoration: none; }
+    footer { background: var(--dark); padding: 44px 5%; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
+    .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: white; }
+    .footer-logo span { color: #ff8a80; }
+    .f-info { color: rgba(255,255,255,0.4); font-size: .8rem; line-height: 1.9; }
+    .f-info a { color: rgba(255,255,255,0.6); text-decoration: none; }
+    .footer-disclaimer { max-width: 1200px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.25); font-size: .72rem; line-height: 1.7; }
+    .sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; }
+    .sticky a { display: flex; align-items: center; justify-content: center; gap: 14px; background: var(--red2); color: white; font-size: .9rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 20px; text-decoration: none; width: 100%; }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <a href="/index.html" class="nav-logo">Scottsdale <span>Sub-Zero</span> Repair</a>
+    <div class="nav-links">
+      <a href="/index.html#services">Services</a>
+      <a href="/index.html#areas">Areas</a>
+      <a href="/about.html">About</a>
+      <a href="/blog.html" class="active">Blog</a>
+      <a href="/index.html#faq">FAQ</a>
+      <a href="tel:+14804189669" class="nav-cta">☎ (480) 418-9669</a>
+    </div>
+    <a href="tel:+14804189669" style="background:var(--red);color:white;padding:10px 18px;border-radius:6px;font-weight:700;font-size:.85rem;text-decoration:none;">☎ Call Now</a>
+  </div>
+</nav>
+
+<header class="page-hero">
+  <div class="s-eye">Expert Tips · Scottsdale AZ</div>
+  <h1>Sub-Zero Repair <em>Blog</em></h1>
+  <p>Arizona-specific guides, maintenance tips, and repair advice from Scottsdale's Sub-Zero specialists.</p>
+</header>
+
+<section>
+  <div class="section-inner">
+    <div class="blog-grid">
+
+```
+  <a href="/blog-subzero-not-cooling-arizona.html" class="blog-card">
+    <img src="IMG_3909.png" alt="Sub-Zero not cooling Arizona heat" class="blog-img">
+    <div class="blog-body">
+      <div class="blog-tag">Most Common Issue</div>
+      <h2>Why Your Sub-Zero Stops Cooling in Arizona Heat</h2>
+      <p>Scottsdale's 115°F summers push Sub-Zero units to their limits. Here's exactly why they fail and what to do immediately.</p>
+      <div class="blog-meta"><span>📅 2025</span><span>⏱ 5 min read</span></div>
+      <div class="blog-link">Read Article →</div>
+    </div>
+  </a>
+
+  <a href="/blog-subzero-ice-maker-not-working.html" class="blog-card">
+    <img src="IMG_3911.png" alt="Sub-Zero ice maker repair Scottsdale" class="blog-img">
+    <div class="blog-body">
+      <div class="blog-tag">Ice Maker</div>
+      <h2>Sub-Zero Ice Maker Not Working: Top 5 Causes in Scottsdale</h2>
+      <p>Ice maker issues are the #1 Sub-Zero complaint in Arizona. Hard water, heat, and dust are the usual suspects.</p>
+      <div class="blog-meta"><span>📅 2025</span><span>⏱ 4 min read</span></div>
+      <div class="blog-link">Read Article →</div>
+    </div>
+  </a>
+
+  <a href="/blog-subzero-condenser-coils-scottsdale.html" class="blog-card">
+    <img src="IMG_3910.png" alt="Sub-Zero condenser coil cleaning Scottsdale" class="blog-img">
+    <div class="blog-body">
+      <div class="blog-tag">Maintenance</div>
+      <h2>How Often to Clean Sub-Zero Condenser Coils in Scottsdale</h2>
+      <p>Arizona dust clogs condenser coils 3x faster than other states. This one maintenance task prevents 60% of all cooling failures.</p>
+      <div class="blog-meta"><span>📅 2025</span><span>⏱ 4 min read</span></div>
+      <div class="blog-link">Read Article →</div>
+    </div>
+  </a>
+
+</div>
+```
+
+  </div>
+</section>
+
+<section class="cta-section">
+  <div class="section-inner">
+    <h2>Sub-Zero Not Working? <em>Call Now</em></h2>
+    <p>Same-day service · $89 service call · 12-month warranty</p>
+    <a href="tel:+14804189669" class="cta-num">(480) 418-9669</a>
+    <a href="tel:+14804189669" class="hero-btn">🚨 Call Now — We Fix Today</a>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <div class="footer-logo">Scottsdale <span>Sub-Zero</span> Repair</div>
+      <div style="color:rgba(255,255,255,0.25);font-size:.72rem;margin-top:4px;letter-spacing:2px;text-transform:uppercase;">Fast · Reliable · Professional</div>
+    </div>
+    <div class="f-info">
+      <p>Sub-Zero Repair · Scottsdale AZ & Surrounding Areas</p>
+      <p><a href="tel:+14804189669">(480) 418-9669</a></p>
+      <p>Mon–Fri 9AM–6PM · Sat 9AM–1PM</p>
+    </div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;align-items:center;">
+      <a href="/index.html#services" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Services</a>
+      <a href="/about.html" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">About</a>
+      <a href="/blog.html" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">Blog</a>
+      <a href="/index.html#faq" style="color:rgba(255,255,255,0.4);font-size:.8rem;text-decoration:none;">FAQ</a>
+    </div>
+  </div>
+  <div class="footer-disclaimer">
+    All brand names, logos, and trademarks referenced on this website are the property of their respective owners. Scottsdale Sub-Zero Repair is an independent appliance repair service provider and is not affiliated with, endorsed by, or sponsored by Sub-Zero Group, Inc. Sub-Zero® is a registered trademark of Sub-Zero Group, Inc.
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="tel:+14804189669">🚨 CALL NOW — (480) 418-9669 — SAME-DAY SERVICE</a>
+</div>
+
+</body>
+</html>
