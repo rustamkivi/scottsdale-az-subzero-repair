@@ -129,9 +129,11 @@
 
     /* HERO RIGHT CARD */
     .hero-card {
-      background: white; border-radius: 16px; padding: 32px;
+      background: white; border-radius: 16px; overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,0.3);
     }
+    .hero-card-img { width: 100%; height: 220px; object-fit: cover; display: block; }
+    .hero-card-body { padding: 24px 28px 28px; }
     @media(max-width:900px){ .hero-card { display: none; } }
     .card-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
     .card-sub { font-size: .78rem; color: var(--muted); margin-bottom: 20px; }
@@ -167,7 +169,8 @@
       text-decoration: none; color: var(--text);
     }
     .service-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
-    .service-img { width: 100%; height: 180px; object-fit: cover; background: var(--light2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .service-img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .service-img-placeholder { width: 100%; height: 200px; background: var(--light2); display: flex; align-items: center; justify-content: center; font-size: 3rem; }
     .service-body { padding: 20px; }
     .service-tag { font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--red); margin-bottom: 8px; }
     .service-card h3 { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
@@ -175,13 +178,22 @@
     .service-urgency { font-size: .75rem; color: var(--red); font-weight: 500; }
     .service-link { font-size: .78rem; font-weight: 700; color: var(--red); letter-spacing: 1px; text-transform: uppercase; display: inline-block; margin-top: 10px; }
 
+    /* PHOTO SECTION */
+    .photo-strip { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-top: 40px; }
+    .photo-strip img { width: 100%; height: 220px; object-fit: cover; border-radius: 10px; display: block; }
+    @media(max-width:768px){ .photo-strip { grid-template-columns: repeat(2,1fr); } }
+
     /* WHY WAIT */
     .why-wait { background: #fff5f5; border-top: 1px solid #ffddd9; border-bottom: 1px solid #ffddd9; }
-    .why-wait-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 20px; }
-    .ww-card { background: white; border: 1px solid #ffddd9; border-radius: 12px; padding: 24px; }
+    .why-wait-inner { max-width: 1200px; margin: 0 auto; }
+    .why-wait-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    @media(max-width:900px){ .why-wait-layout { grid-template-columns: 1fr; } }
+    .why-wait-photo { width: 100%; height: 380px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+    .why-wait-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .ww-card { background: white; border: 1px solid #ffddd9; border-radius: 12px; padding: 20px; }
     .ww-icon { font-size: 1.8rem; margin-bottom: 12px; }
     .ww-card h3 { font-size: .95rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
-    .ww-card p { font-size: .84rem; color: var(--muted); line-height: 1.6; }
+    .ww-card p { font-size: .82rem; color: var(--muted); line-height: 1.6; }
     .ww-num { font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; color: var(--red); margin-top: 8px; }
     .ww-sub { font-size: .72rem; color: var(--muted); }
 
@@ -209,10 +221,14 @@
     .area-card p { font-size: .78rem; color: var(--muted); }
 
     /* PROCESS */
-    .process-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 32px; }
-    .process-step { text-align: center; }
-    .step-circle { width: 64px; height: 64px; border-radius: 50%; background: var(--red); color: white; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; }
-    .process-step h3 { font-size: .95rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
+    .process-section { background: var(--light); }
+    .process-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+    @media(max-width:900px){ .process-layout { grid-template-columns: 1fr; } }
+    .process-photo { width: 100%; height: 400px; object-fit: cover; border-radius: 14px; box-shadow: 0 12px 40px rgba(0,0,0,0.15); }
+    .process-grid { display: grid; gap: 28px; }
+    .process-step { display: flex; gap: 20px; align-items: flex-start; }
+    .step-circle { width: 52px; height: 52px; border-radius: 50%; background: var(--red); color: white; font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+    .process-step h3 { font-size: .95rem; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
     .process-step p { font-size: .84rem; color: var(--muted); line-height: 1.6; }
 
     /* WHY US */
@@ -222,6 +238,29 @@
     .why-icon { font-size: 1.8rem; margin-bottom: 14px; }
     .why-card h3 { font-size: .95rem; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
     .why-card p { font-size: .84rem; color: var(--muted); line-height: 1.6; }
+
+    /* VAN SECTION */
+    .van-section { position: relative; overflow: hidden; }
+    .van-img { width: 100%; height: 420px; object-fit: cover; display: block; }
+    .van-overlay { position: absolute; inset: 0; background: linear-gradient(to right, rgba(15,39,68,0.85) 0%, rgba(15,39,68,0.3) 100%); display: flex; align-items: center; }
+    .van-text { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+    .van-text h2 { color: white; margin-bottom: 12px; }
+    .van-text p { color: rgba(255,255,255,0.75); max-width: 480px; margin-bottom: 28px; font-size: .95rem; line-height: 1.8; }
+
+    /* OTHER BRANDS */
+    .brands-section { background: var(--dark); }
+    .brands-section .s-eye { color: rgba(255,255,255,0.4); }
+    .brands-section h2 { color: white; }
+    .brands-section h2 em { color: #ffd700; }
+    .brands-section .s-lead { color: rgba(255,255,255,0.5); }
+    .brands-grid { display: flex; flex-wrap: wrap; gap: 12px; }
+    .brand-tag {
+      background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.15);
+      color: rgba(255,255,255,0.8); font-size: .88rem; font-weight: 600;
+      padding: 12px 22px; border-radius: 8px; text-decoration: none;
+      transition: all .2s; letter-spacing: .5px;
+    }
+    .brand-tag:hover { background: rgba(255,255,255,0.15); color: white; border-color: rgba(255,255,255,0.4); }
 
     /* HOURS */
     .hours-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 16px; }
@@ -253,15 +292,13 @@
 
     /* FOOTER */
     footer { background: var(--dark); padding: 44px 5%; }
-    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 24px; }
+    .footer-inner { max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-start; gap: 24px; }
     .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; color: white; }
     .footer-logo span { color: #ff8a80; }
     .f-info { color: rgba(255,255,255,0.4); font-size: .8rem; line-height: 1.9; }
     .f-info a { color: rgba(255,255,255,0.6); text-decoration: none; }
     .f-info a:hover { color: #ffd700; }
-    .footer-links { display: flex; gap: 16px; }
-    .footer-links a { color: rgba(255,255,255,0.4); font-size: .8rem; text-decoration: none; transition: color .2s; }
-    .footer-links a:hover { color: white; }
+    .footer-disclaimer { max-width: 1200px; margin: 28px auto 0; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.08); color: rgba(255,255,255,0.25); font-size: .72rem; line-height: 1.7; }
 
     /* STICKY */
     .sticky { position: fixed; bottom: 0; left: 0; right: 0; z-index: 200; }
@@ -285,7 +322,7 @@
       <div class="nav-hours">Mon–Fri <strong>9AM–6PM</strong> · Sat <strong>9AM–1PM</strong></div>
       <a href="tel:+14804189669" class="nav-cta">☎ (480) 418-9669</a>
     </div>
-    <a href="tel:+14804189669" style="background:var(--red);color:white;padding:10px 18px;border-radius:6px;font-weight:700;font-size:.85rem;text-decoration:none;display:none;" class="mobile-nav-btn">☎ Call Now</a>
+    <a href="tel:+14804189669" style="background:var(--red);color:white;padding:10px 18px;border-radius:6px;font-weight:700;font-size:.85rem;text-decoration:none;" class="mobile-nav-btn">☎ Call Now</a>
   </div>
 </nav>
 
@@ -316,26 +353,28 @@
   <div class="hero-stats">
     <div class="h-stat"><strong>Same Day</strong><span>Arrival</span></div>
     <div class="h-stat"><strong>12 Mo</strong><span>Warranty</span></div>
-    <div class="h-stat"><strong>10+</strong><span>Yrs Experience</span></div>
+    <div class="h-stat"><strong>9+</strong><span>Yrs Experience</span></div>
     <div class="h-stat"><strong>5 ★</strong><span>Reviews</span></div>
   </div>
 </div>
 
 <div class="hero-card">
-  <div class="card-title">Sub-Zero Services</div>
-  <div class="card-sub">All models · Same-day · Scottsdale AZ</div>
-  <ul class="card-services">
-    <li><div class="card-icon">🌡️</div> Refrigerator Not Cooling</li>
-    <li><div class="card-icon">🧊</div> Ice Maker Repair</li>
-    <li><div class="card-icon">💧</div> Water Leak Repair</li>
-    <li><div class="card-icon">❄️</div> Freezer Repair</li>
-    <li><div class="card-icon">💧</div> Water Dispenser</li>
-    <li><div class="card-icon">🔊</div> Noise Diagnosis</li>
-    <li><div class="card-icon">🔴</div> Error Code Repair</li>
-    <li><div class="card-icon">🍷</div> Wine Cooler Service</li>
-  </ul>
-  <a href="tel:+14804189669" class="card-cta">☎ Call (480) 418-9669</a>
-  <div class="card-hours">Mon–Fri 9AM–6PM · Sat 9AM–1PM</div>
+  <img src="IMG_3909.png" alt="Sub-Zero repair technician Scottsdale" class="hero-card-img">
+  <div class="hero-card-body">
+    <div class="card-title">Sub-Zero Services</div>
+    <div class="card-sub">All models · Same-day · Scottsdale AZ</div>
+    <ul class="card-services">
+      <li><div class="card-icon">🌡️</div> Refrigerator Not Cooling</li>
+      <li><div class="card-icon">🧊</div> Ice Maker Repair</li>
+      <li><div class="card-icon">💧</div> Water Leak Repair</li>
+      <li><div class="card-icon">❄️</div> Freezer Repair</li>
+      <li><div class="card-icon">🔊</div> Noise Diagnosis</li>
+      <li><div class="card-icon">🔴</div> Error Code Repair</li>
+      <li><div class="card-icon">🍷</div> Wine Cooler Service</li>
+    </ul>
+    <a href="tel:+14804189669" class="card-cta">☎ Call (480) 418-9669</a>
+    <div class="card-hours">Mon–Fri 9AM–6PM · Sat 9AM–1PM</div>
+  </div>
 </div>
 ```
 
@@ -345,15 +384,20 @@
 <!-- WHY WAIT -->
 
 <section class="why-wait">
-  <div class="section-inner">
-    <div class="s-eye">Why You Can't Wait</div>
-    <h2>Every Hour Costs <em>You More</em></h2>
-    <p class="s-lead">Arizona's 115°F heat makes Sub-Zero problems worse faster than anywhere else in the country.</p>
-    <div class="why-wait-grid">
-      <div class="ww-card"><div class="ww-icon">🥩</div><h3>Food Loss</h3><p>Meat, dairy and produce spoil within hours. One call today saves hundreds at the grocery store.</p><div class="ww-num">$300–$500</div><div class="ww-sub">average food loss if you wait</div></div>
-      <div class="ww-card"><div class="ww-icon">⚙️</div><h3>Compressor Damage</h3><p>Running warm in AZ heat forces the compressor to overwork. Early repair = $300. Compressor = $1,500+.</p><div class="ww-num">5× more</div><div class="ww-sub">cost if compressor fails</div></div>
-      <div class="ww-card"><div class="ww-icon">🌵</div><h3>Arizona Heat</h3><p>At 115°F outside, your Sub-Zero works 3× harder. Arizona dust clogs condenser coils fast. Classic Scottsdale problem.</p><div class="ww-num">115°F</div><div class="ww-sub">Scottsdale summer heat</div></div>
-      <div class="ww-card"><div class="ww-icon">🔄</div><h3>vs. New Unit</h3><p>A new Sub-Zero costs $8,000–$15,000. Most repairs cost $200–$600. Repair always wins.</p><div class="ww-num">$8,000+</div><div class="ww-sub">cost of a new Sub-Zero</div></div>
+  <div class="why-wait-inner">
+    <div class="why-wait-layout">
+      <div>
+        <div class="s-eye">Why You Can't Wait</div>
+        <h2>Every Hour Costs <em>You More</em></h2>
+        <p class="s-lead">Arizona's 115°F heat makes Sub-Zero problems worse faster than anywhere else in the country.</p>
+        <div class="why-wait-grid">
+          <div class="ww-card"><div class="ww-icon">🥩</div><h3>Food Loss</h3><p>Meat, dairy and produce spoil within hours. One call today saves hundreds at the grocery store.</p><div class="ww-num">$300–$500</div><div class="ww-sub">average food loss if you wait</div></div>
+          <div class="ww-card"><div class="ww-icon">⚙️</div><h3>Compressor Damage</h3><p>Running warm in AZ heat forces the compressor to overwork. Early repair = $300. Compressor = $1,500+.</p><div class="ww-num">5× more</div><div class="ww-sub">cost if compressor fails</div></div>
+          <div class="ww-card"><div class="ww-icon">🌵</div><h3>Arizona Heat</h3><p>At 115°F outside, your Sub-Zero works 3× harder. Arizona dust clogs condenser coils fast.</p><div class="ww-num">115°F</div><div class="ww-sub">Scottsdale summer heat</div></div>
+          <div class="ww-card"><div class="ww-icon">🔄</div><h3>vs. New Unit</h3><p>A new Sub-Zero costs $8,000–$15,000. Most repairs cost $200–$600. Repair always wins.</p><div class="ww-num">$8,000+</div><div class="ww-sub">cost of a new Sub-Zero</div></div>
+        </div>
+      </div>
+      <img src="IMG_3910.png" alt="Clogged Sub-Zero condenser coils from Arizona dust" class="why-wait-photo">
     </div>
   </div>
 </section>
@@ -367,7 +411,7 @@
     <p class="s-lead">Every issue diagnosed and fixed on the first visit. We carry the most common Sub-Zero parts on the truck.</p>
     <div class="services-grid">
       <a href="/not-cooling.html" class="service-card">
-        <div class="service-img">🌡️</div>
+        <img src="IMG_3909.png" alt="Sub-Zero not cooling repair Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Most Urgent</div>
           <h3>Sub-Zero Not Cooling</h3>
@@ -377,7 +421,7 @@
         </div>
       </a>
       <a href="/ice-maker-repair.html" class="service-card">
-        <div class="service-img">🧊</div>
+        <img src="IMG_3911.png" alt="Sub-Zero ice maker repair Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Most Common</div>
           <h3>Ice Maker Not Working</h3>
@@ -387,7 +431,7 @@
         </div>
       </a>
       <a href="/leaking-water.html" class="service-card">
-        <div class="service-img">💧</div>
+        <img src="IMG_3919.png" alt="Sub-Zero water leak repair Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Floor Damage Risk</div>
           <h3>Leaking Water</h3>
@@ -397,7 +441,7 @@
         </div>
       </a>
       <a href="/freezer-repair.html" class="service-card">
-        <div class="service-img">❄️</div>
+        <img src="IMG_3924.png" alt="Sub-Zero freezer repair Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Freezer Issues</div>
           <h3>Freezer Not Freezing</h3>
@@ -407,7 +451,7 @@
         </div>
       </a>
       <a href="/error-codes.html" class="service-card">
-        <div class="service-img">🔴</div>
+        <img src="IMG_3923.png" alt="Sub-Zero error code diagnostics Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Diagnostics</div>
           <h3>Error Codes & Alarms</h3>
@@ -417,7 +461,7 @@
         </div>
       </a>
       <a href="/wine-cooler.html" class="service-card">
-        <div class="service-img">🍷</div>
+        <img src="IMG_3918.png" alt="Sub-Zero wine cooler repair Scottsdale" class="service-img">
         <div class="service-body">
           <div class="service-tag">Wine Storage</div>
           <h3>Wine Cooler Service</h3>
@@ -426,6 +470,68 @@
           <div class="service-link">Learn More →</div>
         </div>
       </a>
+    </div>
+
+```
+<!-- Photo strip -->
+<div class="photo-strip">
+  <img src="IMG_3924.png" alt="Sub-Zero technician explaining repair to homeowner">
+  <img src="IMG_3923.png" alt="Sub-Zero condenser coils before and after cleaning Arizona">
+  <img src="IMG_3919.png" alt="Sub-Zero compressor repair Scottsdale">
+</div>
+```
+
+  </div>
+</section>
+
+<!-- PROCESS -->
+
+<section class="process-section">
+  <div class="section-inner">
+    <div class="process-layout">
+      <img src="IMG_3918.png" alt="Sub-Zero repair technician arriving at Scottsdale home" class="process-photo">
+      <div>
+        <div class="s-eye">How It Works</div>
+        <h2>From Your Call <em>to Cold Again</em></h2>
+        <p class="s-lead">Four steps. Same day. Done right.</p>
+        <div class="process-grid">
+          <div class="process-step"><div class="step-circle">1</div><div><h3>Call Right Now</h3><p>Describe what's happening. We book your same-day slot immediately.</p></div></div>
+          <div class="process-step"><div class="step-circle">2</div><div><h3>Tech Arrives Today</h3><p>We come to your Scottsdale home in your chosen window — morning, afternoon, or evening.</p></div></div>
+          <div class="process-step"><div class="step-circle">3</div><div><h3>Diagnosis & Quote</h3><p>Exact cause found. Firm price quoted before any work starts. No surprises.</p></div></div>
+          <div class="process-step"><div class="step-circle">4</div><div><h3>Fixed & Warranted</h3><p>Repaired on-site same day. 12-month written warranty on all work.</p></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VAN / TRUST SECTION -->
+
+<div class="van-section">
+  <img src="IMG_3912.png" alt="Scottsdale Sub-Zero Repair service van" class="van-img">
+  <div class="van-overlay">
+    <div class="van-text">
+      <div class="s-eye" style="color:rgba(255,255,255,0.5);">Local & Trusted</div>
+      <h2>Scottsdale's <em style="color:#ffd700;">Sub-Zero Team</em></h2>
+      <p>9+ years serving Scottsdale, Paradise Valley, Fountain Hills and all surrounding luxury communities. Same faces, same quality, every time.</p>
+      <a href="tel:+14804189669" class="hero-btn">☎ Call (480) 418-9669</a>
+    </div>
+  </div>
+</div>
+
+<!-- WHY US -->
+
+<section>
+  <div class="section-inner">
+    <div class="s-eye">Why Scottsdale Chooses Us</div>
+    <h2>The Difference You <em>Feel Immediately</em></h2>
+    <div class="why-grid">
+      <div class="why-card"><div class="why-icon">⚡</div><h3>Same-Day Emergency Service</h3><p>Call before noon — we arrive today. Not cooling calls get top priority in Scottsdale.</p></div>
+      <div class="why-card"><div class="why-icon">📋</div><h3>Written 12-Month Warranty</h3><p>All parts and labor warranted. Same issue returns — we fix it at no charge.</p></div>
+      <div class="why-card"><div class="why-icon">💰</div><h3>Upfront Flat Pricing</h3><p>You approve the exact cost before we begin. Zero hidden fees, zero surprises.</p></div>
+      <div class="why-card"><div class="why-icon">🌵</div><h3>Arizona Climate Experts</h3><p>We know how Scottsdale dust and 115°F heat destroy Sub-Zero units. We fix the real cause.</p></div>
+      <div class="why-card"><div class="why-icon">🔧</div><h3>Sub-Zero Specialists</h3><p>We work on Sub-Zero every single day. 9+ years with this specific brand.</p></div>
+      <div class="why-card"><div class="why-icon">📦</div><h3>Parts on the Truck</h3><p>Most common Sub-Zero parts stocked. Most repairs done same visit.</p></div>
     </div>
   </div>
 </section>
@@ -471,35 +577,24 @@
   </div>
 </section>
 
-<!-- PROCESS -->
+<!-- OTHER BRANDS -->
 
-<section style="background:var(--light);">
+<section class="brands-section">
   <div class="section-inner">
-    <div class="s-eye">How It Works</div>
-    <h2>From Your Call <em>to Cold Again</em></h2>
-    <p class="s-lead">Four steps. Same day. Done right.</p>
-    <div class="process-grid">
-      <div class="process-step"><div class="step-circle">1</div><h3>Call Right Now</h3><p>Describe what's happening. We book your same-day slot immediately.</p></div>
-      <div class="process-step"><div class="step-circle">2</div><h3>Tech Arrives Today</h3><p>We come to your Scottsdale home in your chosen window — morning, afternoon, or evening.</p></div>
-      <div class="process-step"><div class="step-circle">3</div><h3>Diagnosis & Quote</h3><p>Exact cause found. Firm price quoted before any work starts. No surprises.</p></div>
-      <div class="process-step"><div class="step-circle">4</div><h3>Fixed & Warranted</h3><p>Repaired on-site same day. 12-month written warranty on all work.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY US -->
-
-<section>
-  <div class="section-inner">
-    <div class="s-eye">Why Scottsdale Chooses Us</div>
-    <h2>The Difference You <em>Feel Immediately</em></h2>
-    <div class="why-grid">
-      <div class="why-card"><div class="why-icon">⚡</div><h3>Same-Day Emergency Service</h3><p>Call before noon — we arrive today. Not cooling calls get top priority in Scottsdale.</p></div>
-      <div class="why-card"><div class="why-icon">📋</div><h3>Written 12-Month Warranty</h3><p>All parts and labor warranted. Same issue returns — we fix it at no charge.</p></div>
-      <div class="why-card"><div class="why-icon">💰</div><h3>Upfront Flat Pricing</h3><p>You approve the exact cost before we begin. Zero hidden fees, zero surprises.</p></div>
-      <div class="why-card"><div class="why-icon">🌵</div><h3>Arizona Climate Experts</h3><p>We know how Scottsdale dust and 115°F heat destroy Sub-Zero units. We fix the real cause.</p></div>
-      <div class="why-card"><div class="why-icon">🔧</div><h3>Sub-Zero Specialists</h3><p>We work on Sub-Zero every single day. 10+ years with this specific brand.</p></div>
-      <div class="why-card"><div class="why-icon">📦</div><h3>Parts on the Truck</h3><p>Most common Sub-Zero parts stocked. Most repairs done same visit.</p></div>
+    <div class="s-eye">Additional Brands</div>
+    <h2>Other Luxury Brands <em>We Service</em></h2>
+    <p class="s-lead">Sub-Zero specialists — but we also repair the finest kitchen appliance brands in Scottsdale.</p>
+    <div class="brands-grid">
+      <a href="tel:+14804189669" class="brand-tag">Wolf</a>
+      <a href="tel:+14804189669" class="brand-tag">Thermador</a>
+      <a href="tel:+14804189669" class="brand-tag">Viking</a>
+      <a href="tel:+14804189669" class="brand-tag">Miele</a>
+      <a href="tel:+14804189669" class="brand-tag">GE Monogram</a>
+      <a href="tel:+14804189669" class="brand-tag">Dacor</a>
+      <a href="tel:+14804189669" class="brand-tag">JennAir</a>
+      <a href="tel:+14804189669" class="brand-tag">KitchenAid</a>
+      <a href="tel:+14804189669" class="brand-tag">Bosch</a>
+      <a href="tel:+14804189669" class="brand-tag">Fisher & Paykel</a>
     </div>
   </div>
 </section>
@@ -604,6 +699,9 @@
         ⭐ Read Our Reviews on Yelp
       </a>
     </div>
+  </div>
+  <div class="footer-disclaimer">
+    All brand names, logos, and trademarks referenced on this website are the property of their respective owners. Scottsdale Sub-Zero Repair is an independent appliance repair service provider and is not affiliated with, endorsed by, or sponsored by Sub-Zero Group, Inc. or any other appliance manufacturer. Sub-Zero® is a registered trademark of Sub-Zero Group, Inc.
   </div>
 </footer>
 
